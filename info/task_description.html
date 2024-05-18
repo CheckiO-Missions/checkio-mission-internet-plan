@@ -1,35 +1,38 @@
 <!-- Describe task in general -->
 
-<p>
-    João conseguiu contratar um ótimo plano de Internet para o seu telefone celular. O plano permite que João utilize uma quota de até X megabytes de dados por mês para navegar na Internet. Se João não usa toda a sua quota no mês, os megabytes que ele não usou são adicionados à quota do mês seguinte. Pelo contrato, João nunca pode usar mais megabytes do que a sua quota corrente. Por exemplo, se X=200 megabytes e João usou 150 no primeiro mês e 220 megabytes no segundo mês, então no terceiro mês João tem uma quota de 230 megabytes para usar (50 megabytes são transferidos do primeiro para o segundo mês, 30 megabytes são transferidos do segundo para o terceiro mês). Nesta tarefa são dados o valor da quota mensal X e quantos megabytes João usou em cada um dos primeiros N meses do plano. Você deve determinar quantos megabytes João tem para usar no mês N+1.
+<p style="text-align: justify;">
+    John managed to get a great internet plan for his cell phone. The plan allows John to use a quota of up to X megabytes of data per month to surf the Internet. If John doesn't use all of his quota in a month, the unused megabytes are added to the next month's quota. According to the contract, John can never use more megabytes than his current quota.
 </p>
+
+<p style="text-align: justify;">
+    In this problem, you are given the value of the monthly quota <code>X</code> and the number of megabytes that John used in each of the first N months of the plan. Your task is to determine how many megabytes John has left to use in month N+1.
+</p>
+
+<p style="text-align: justify;">
+    For example, if X = 200 megabytes and John used 150 megabytes in the first month and 220 megabytes in the second month, then in the third month John has a quota of 230 megabytes (50 megabytes are carried over from the first to the second month, 30 megabytes are carried over from the second to the third month).
+</p>   
+    
+<p style="text-align: center;">
+    <img  title="example" src="{{MEDIA}}internet-plan.svg" alt="example" style="max-height: 200px"/>
+</p>
+
 
 <!-- Explain input and output values -->
 <p>
-    <strong>Entrada: </strong> A primeira linha da entrada contém um número inteiro X, o valor da cota mensal em megabytes. A segunda linha contém um inteiro N, o número de meses. Cada um dos elementos da lista uso_mensal contém um número inteiro M_i, indicando a quantidade de megabytes que João usou em cada mês, do mês 1 até o mês N.
+    <strong>Input:</strong> Integer <span translate="no">({% if is_js %}number{% else %}int{% endif %})</span> and <span translate="repeat">{% if is_js %}array{% else %}list{% endif %}</span> of integers.
 </p>
 
 <p>
-    <strong>Saída: </strong> Seu programa deve produzir uma única linha, contendo um único número inteiro, a quantidade de megabytes que João tem para usar no mês N+1.
+    <strong>Output:</strong> Integer <span translate="no">({% if is_js %}number{% else %}int{% endif %})</span>.
 </p>
 
 
 <!-- Put some usage examples -->
 <div class="for_info_only">
     <p>
-        <strong>Exemplo:</strong>
+        <strong>Examples:</strong>
     </p>
 
-{% if interpreter.slug == "js-node" %}
-<pre class="brush: javascript">countConsecutiveSummers(42) == 4
-countConsecutiveSummers(99) == 6
-</pre>
-{% else %}
-<pre class="brush: python">
-cota_megabytes(200, 2, [150, 220]) == 230
-cota_megabytes(100, 3, [50, 80, 30]) == 240
-cota_megabytes(150, 1, [120]) == 180
-</pre>
-{% endif %}
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
 
